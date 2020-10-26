@@ -1,0 +1,51 @@
+<!-- Dodawanie kwadratów po kliknięciu co piąty raz dodaję się kółko -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    button{
+        display:block;
+        margin: 10px auto;
+    }
+    div{
+        width:30px;
+        height:30px;
+        background-color: black;
+        margin:5px;
+        /* float:left; */
+        color:black;
+        text-align: center;
+        line-height: 30px;
+
+    }
+    .fsize
+{
+    font-size: 180%;
+}    </style>
+</head>
+<body>
+    <button>Utwórz element</button>
+    <script>
+        const btn = document.querySelector("button");
+        let number = 1;
+        const addElement = function (){
+            // console.log("klik!")
+            
+            const li = document.createElement('li')
+            li.textContent = number;
+            if(number%3 == 0){
+                li.classList.add("fsize");
+            }
+            document.body.appendChild(li);//dodaj dzieci
+            number = number + 2 ;
+            //console.log(div);
+        }
+        btn.addEventListener("click", addElement);// bez addElement() ponieważ nie wywołujemy funkcji tylko przypisujemy jej nazwę
+
+    </script>
+</body>
+</html>
